@@ -6,6 +6,7 @@ license = "MIT OR Apache-2.0 OR CC0-1.0"
 
 [dependencies]
 bevy = { version = "0.15", features = ["wayland"] }
+blenvy = { git = "https://github.com/ptsd/Blenvy.git", branch = "blenvy-bevy-0.15" }
 rand = "0.8"
 # Compile low-severity logs out of native builds for performance.
 log = { version = "0.4", features = [

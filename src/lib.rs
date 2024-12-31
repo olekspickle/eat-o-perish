@@ -12,6 +12,8 @@ use bevy::{
     prelude::*,
 };
 
+use blenvy::BlenvyPlugin;
+
 pub struct AppPlugin;
 
 impl Plugin for AppPlugin {
@@ -26,7 +28,7 @@ impl Plugin for AppPlugin {
         app.add_systems(Startup, spawn_camera);
 
         // Add Bevy plugins.
-        app.add_plugins(
+        app.add_plugins((
             DefaultPlugins
                 .set(AssetPlugin {
                     // Wasm builds will check for meta files (that don't exist) if this isn't set.
@@ -52,7 +54,8 @@ impl Plugin for AppPlugin {
                     },
                     ..default()
                 }),
-        );
+                BlenvyPlugin::default(),
+        ));
 
         // Add other plugins.
         app.add_plugins((
