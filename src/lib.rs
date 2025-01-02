@@ -96,6 +96,10 @@ enum AppSet {
 fn spawn_ui_camera(mut commands: Commands) {
     commands.spawn((
         Name::new("UiCamera"),
+        Camera {
+            order: 2,
+            ..Default::default()
+        },
         Camera2d,
         // Render all UI to this camera.
         // Not strictly necessary since we only use one camera,
