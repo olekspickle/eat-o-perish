@@ -4,3 +4,5 @@
 .cargo/config.toml
 
 cargo.lock
+
+*.blend1

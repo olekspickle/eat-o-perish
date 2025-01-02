@@ -13,6 +13,10 @@ use bevy::{
 };
 
 use blenvy::BlenvyPlugin;
+use avian3d::prelude::*;
+
+use bevy_tnua::prelude::*;
+use bevy_tnua_avian3d::*;
 
 pub struct AppPlugin;
 
@@ -25,7 +29,7 @@ impl Plugin for AppPlugin {
         );
 
         // Spawn the main camera.
-        app.add_systems(Startup, spawn_camera);
+        app.add_systems(Startup, spawn_ui_camera);
 
         // Add Bevy plugins.
         app.add_plugins((
@@ -39,7 +43,7 @@ impl Plugin for AppPlugin {
                 })
                 .set(WindowPlugin {
                     primary_window: Window {
-                        title: "Bevy New 2D".to_string(),
+                        title: "Bevy New 3D".to_string(),
                         canvas: Some("#bevy".to_string()),
                         fit_canvas_to_parent: true,
                         prevent_default_event_handling: true,
@@ -55,7 +59,12 @@ impl Plugin for AppPlugin {
                     ..default()
                 }),
                 BlenvyPlugin::default(),
+                PhysicsPlugins::default(),
+                TnuaControllerPlugin::new(FixedUpdate),
+                TnuaAvian3dPlugin::new(FixedUpdate),
         ));
+
+        app.register_type::<bevy::text::TextEntity>();
 
         // Add other plugins.
         app.add_plugins((
@@ -84,9 +93,13 @@ enum AppSet {
     Update,
 }
 
-fn spawn_camera(mut commands: Commands) {
+fn spawn_ui_camera(mut commands: Commands) {
     commands.spawn((
-        Name::new("Camera"),
+        Name::new("UiCamera"),
+        Camera {
+            order: 2,
+            ..Default::default()
+        },
         Camera2d,
         // Render all UI to this camera.
         // Not strictly necessary since we only use one camera,
