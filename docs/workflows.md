@@ -48,7 +48,7 @@ The release workflow can be configured by tweaking the environment variables in 
 
   ```yaml
   # The base filename of the binary produced by `cargo build`.
-  cargo_build_binary_name: bevy_new_2d
+  cargo_build_binary_name: eat_o_perish
 
   # The path to the assets directory.
   assets_path: assets
@@ -72,11 +72,11 @@ The release workflow can be configured by tweaking the environment variables in 
   # The base filename of the binary in the package produced by this workflow.
   # Applies to Windows, macOS, and Linux releases.
   # Defaults to `cargo_build_binary_name` if commented out.
-  app_binary_name: bevy_new_2d
+  app_binary_name: eat_o_perish
 
   # The name of the `.zip` or `.dmg` file produced by this workflow.
   # Defaults to `app_binary_name` if commented out.
-  app_package_name: bevy_new_2d
+  app_package_name: eat_o_perish
 
   # The display name of the app produced by this workflow.
   # Applies to macOS releases.

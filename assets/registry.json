@@ -579,6 +579,19 @@
       "type": "array",
       "typeInfo": "List"
     },
+    "alloc::vec::Vec<bevy_window::monitor::VideoMode>": {
+      "isComponent": false,
+      "isResource": false,
+      "items": {
+        "type": {
+          "$ref": "#/$defs/bevy_window::monitor::VideoMode"
+        }
+      },
+      "long_name": "alloc::vec::Vec<bevy_window::monitor::VideoMode>",
+      "short_name": "Vec<VideoMode>",
+      "type": "array",
+      "typeInfo": "List"
+    },
     "alloc::vec::Vec<blenvy::blueprints::animation::AnimationInfo>": {
       "isComponent": false,
       "isResource": false,
@@ -4461,10 +4474,10 @@
       "type": "object",
       "typeInfo": "Enum"
     },
-    "bevy_asset::handle::Handle<bevy_new_2d::screens::credits::CreditsMusic>": {
+    "bevy_asset::handle::Handle<eat_o_perish::screens::credits::CreditsMusic>": {
       "isComponent": false,
       "isResource": false,
-      "long_name": "bevy_asset::handle::Handle<bevy_new_2d::screens::credits::CreditsMusic>",
+      "long_name": "bevy_asset::handle::Handle<eat_o_perish::screens::credits::CreditsMusic>",
       "oneOf": [
         {
           "items": false,
@@ -4486,7 +4499,7 @@
           "prefixItems": [
             {
               "type": {
-                "$ref": "#/$defs/bevy_asset::id::AssetId<bevy_new_2d::screens::credits::CreditsMusic>"
+                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>"
               }
             }
           ],
@@ -4499,10 +4512,10 @@
       "type": "object",
       "typeInfo": "Enum"
     },
-    "bevy_asset::handle::Handle<bevy_new_2d::screens::gameplay::GameplayMusic>": {
+    "bevy_asset::handle::Handle<eat_o_perish::screens::gameplay::GameplayMusic>": {
       "isComponent": false,
       "isResource": false,
-      "long_name": "bevy_asset::handle::Handle<bevy_new_2d::screens::gameplay::GameplayMusic>",
+      "long_name": "bevy_asset::handle::Handle<eat_o_perish::screens::gameplay::GameplayMusic>",
       "oneOf": [
         {
           "items": false,
@@ -4524,7 +4537,7 @@
           "prefixItems": [
             {
               "type": {
-                "$ref": "#/$defs/bevy_asset::id::AssetId<bevy_new_2d::screens::gameplay::GameplayMusic>"
+                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>"
               }
             }
           ],
@@ -4537,10 +4550,10 @@
       "type": "object",
       "typeInfo": "Enum"
     },
-    "bevy_asset::handle::Handle<bevy_new_2d::theme::interaction::InteractionAssets>": {
+    "bevy_asset::handle::Handle<eat_o_perish::theme::interaction::InteractionAssets>": {
       "isComponent": false,
       "isResource": false,
-      "long_name": "bevy_asset::handle::Handle<bevy_new_2d::theme::interaction::InteractionAssets>",
+      "long_name": "bevy_asset::handle::Handle<eat_o_perish::theme::interaction::InteractionAssets>",
       "oneOf": [
         {
           "items": false,
@@ -4562,7 +4575,7 @@
           "prefixItems": [
             {
               "type": {
-                "$ref": "#/$defs/bevy_asset::id::AssetId<bevy_new_2d::theme::interaction::InteractionAssets>"
+                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>"
               }
             }
           ],
@@ -5653,10 +5666,10 @@
       "type": "object",
       "typeInfo": "Enum"
     },
-    "bevy_asset::id::AssetId<bevy_new_2d::screens::credits::CreditsMusic>": {
+    "bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>": {
       "isComponent": false,
       "isResource": false,
-      "long_name": "bevy_asset::id::AssetId<bevy_new_2d::screens::credits::CreditsMusic>",
+      "long_name": "bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>",
       "oneOf": [
         {
           "additionalProperties": false,
@@ -5699,10 +5712,10 @@
       "type": "object",
       "typeInfo": "Enum"
     },
-    "bevy_asset::id::AssetId<bevy_new_2d::screens::gameplay::GameplayMusic>": {
+    "bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>": {
       "isComponent": false,
       "isResource": false,
-      "long_name": "bevy_asset::id::AssetId<bevy_new_2d::screens::gameplay::GameplayMusic>",
+      "long_name": "bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>",
       "oneOf": [
         {
           "additionalProperties": false,
@@ -5745,10 +5758,10 @@
       "type": "object",
       "typeInfo": "Enum"
     },
-    "bevy_asset::id::AssetId<bevy_new_2d::theme::interaction::InteractionAssets>": {
+    "bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>": {
       "isComponent": false,
       "isResource": false,
-      "long_name": "bevy_asset::id::AssetId<bevy_new_2d::theme::interaction::InteractionAssets>",
+      "long_name": "bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>",
       "oneOf": [
         {
           "additionalProperties": false,
@@ -10857,21 +10870,21 @@
       "type": "object",
       "typeInfo": "Struct"
     },
-    "bevy_new_2d::demo::Player": {
+    "eat_o_perish::demo::Player": {
       "additionalProperties": false,
       "isComponent": true,
       "isResource": false,
-      "long_name": "bevy_new_2d::demo::Player",
+      "long_name": "eat_o_perish::demo::Player",
       "properties": {},
       "required": [],
       "short_name": "Player",
       "type": "object",
       "typeInfo": "Struct"
     },
-    "bevy_new_2d::demo::PlayerAction": {
+    "eat_o_perish::demo::PlayerAction": {
       "isComponent": false,
       "isResource": false,
-      "long_name": "bevy_new_2d::demo::PlayerAction",
+      "long_name": "eat_o_perish::demo::PlayerAction",
       "oneOf": [
         "Up",
         "Down",
@@ -10883,11 +10896,11 @@
       "type": "string",
       "typeInfo": "Enum"
     },
-    "bevy_new_2d::screens::splash::SplashTimer": {
+    "eat_o_perish::screens::splash::SplashTimer": {
       "isComponent": false,
       "isResource": true,
       "items": false,
-      "long_name": "bevy_new_2d::screens::splash::SplashTimer",
+      "long_name": "eat_o_perish::screens::splash::SplashTimer",
       "prefixItems": [
         {
           "type": {
@@ -10899,11 +10912,11 @@
       "type": "array",
       "typeInfo": "TupleStruct"
     },
-    "bevy_new_2d::theme::interaction::InteractionPalette": {
+    "eat_o_perish::theme::interaction::InteractionPalette": {
       "additionalProperties": false,
       "isComponent": true,
       "isResource": false,
-      "long_name": "bevy_new_2d::theme::interaction::InteractionPalette",
+      "long_name": "eat_o_perish::theme::interaction::InteractionPalette",
       "properties": {
         "hovered": {
           "type": {
@@ -16920,15 +16933,15 @@
         }
       }
     },
-    "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
       "isComponent": false,
       "isResource": false,
       "keyType": {
         "type": {
-          "$ref": "#/$defs/bevy_new_2d::demo::PlayerAction"
+          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
         }
       },
-      "long_name": "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
       "short_name": "HashMap<PlayerAction, Vec<Box<dyn Axislike>>, DefaultHashBuilder>",
       "type": "object",
       "typeInfo": "Map",
@@ -16938,15 +16951,15 @@
         }
       }
     },
-    "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
       "isComponent": false,
       "isResource": false,
       "keyType": {
         "type": {
-          "$ref": "#/$defs/bevy_new_2d::demo::PlayerAction"
+          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
         }
       },
-      "long_name": "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
       "short_name": "HashMap<PlayerAction, Vec<Box<dyn Buttonlike>>, DefaultHashBuilder>",
       "type": "object",
       "typeInfo": "Map",
@@ -16956,15 +16969,15 @@
         }
       }
     },
-    "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
       "isComponent": false,
       "isResource": false,
       "keyType": {
         "type": {
-          "$ref": "#/$defs/bevy_new_2d::demo::PlayerAction"
+          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
         }
       },
-      "long_name": "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
       "short_name": "HashMap<PlayerAction, Vec<Box<dyn DualAxislike>>, DefaultHashBuilder>",
       "type": "object",
       "typeInfo": "Map",
@@ -16974,15 +16987,15 @@
         }
       }
     },
-    "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
       "isComponent": false,
       "isResource": false,
       "keyType": {
         "type": {
-          "$ref": "#/$defs/bevy_new_2d::demo::PlayerAction"
+          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
         }
       },
-      "long_name": "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
       "short_name": "HashMap<PlayerAction, Vec<Box<dyn TripleAxislike>>, DefaultHashBuilder>",
       "type": "object",
       "typeInfo": "Map",
@@ -16992,15 +17005,15 @@
         }
       }
     },
-    "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
       "isComponent": false,
       "isResource": false,
       "keyType": {
         "type": {
-          "$ref": "#/$defs/bevy_new_2d::demo::PlayerAction"
+          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
         }
       },
-      "long_name": "bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
       "short_name": "HashMap<PlayerAction, ActionData, DefaultHashBuilder>",
       "type": "object",
       "typeInfo": "Map",
@@ -18141,6 +18154,90 @@
         "theme"
       ],
       "short_name": "WindowThemeChanged",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "bevy_window::monitor::Monitor": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "bevy_window::monitor::Monitor",
+      "properties": {
+        "name": {
+          "type": {
+            "$ref": "#/$defs/core::option::Option<alloc::string::String>"
+          }
+        },
+        "physical_height": {
+          "type": {
+            "$ref": "#/$defs/u32"
+          }
+        },
+        "physical_position": {
+          "type": {
+            "$ref": "#/$defs/glam::IVec2"
+          }
+        },
+        "physical_width": {
+          "type": {
+            "$ref": "#/$defs/u32"
+          }
+        },
+        "refresh_rate_millihertz": {
+          "type": {
+            "$ref": "#/$defs/core::option::Option<u32>"
+          }
+        },
+        "scale_factor": {
+          "type": {
+            "$ref": "#/$defs/f64"
+          }
+        },
+        "video_modes": {
+          "type": {
+            "$ref": "#/$defs/alloc::vec::Vec<bevy_window::monitor::VideoMode>"
+          }
+        }
+      },
+      "required": [
+        "physical_height",
+        "physical_width",
+        "physical_position",
+        "scale_factor",
+        "video_modes"
+      ],
+      "short_name": "Monitor",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "bevy_window::monitor::VideoMode": {
+      "additionalProperties": false,
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "bevy_window::monitor::VideoMode",
+      "properties": {
+        "bit_depth": {
+          "type": {
+            "$ref": "#/$defs/u16"
+          }
+        },
+        "physical_size": {
+          "type": {
+            "$ref": "#/$defs/glam::UVec2"
+          }
+        },
+        "refresh_rate_millihertz": {
+          "type": {
+            "$ref": "#/$defs/u32"
+          }
+        }
+      },
+      "required": [
+        "physical_size",
+        "bit_depth",
+        "refresh_rate_millihertz"
+      ],
+      "short_name": "VideoMode",
       "type": "object",
       "typeInfo": "Struct"
     },
@@ -20437,6 +20534,33 @@
       "type": "object",
       "typeInfo": "Enum"
     },
+    "core::option::Option<u32>": {
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "core::option::Option<u32>",
+      "oneOf": [
+        {
+          "long_name": "None"
+        },
+        {
+          "items": false,
+          "long_name": "Some",
+          "prefixItems": [
+            {
+              "type": {
+                "$ref": "#/$defs/u32"
+              }
+            }
+          ],
+          "short_name": "Some",
+          "type": "array",
+          "typeInfo": "Tuple"
+        }
+      ],
+      "short_name": "Option<u32>",
+      "type": "object",
+      "typeInfo": "Enum"
+    },
     "f32": {
       "isComponent": false,
       "isResource": false,
@@ -20942,15 +21066,15 @@
       "type": "int",
       "typeInfo": "Value"
     },
-    "leafwing_input_manager::action_state::ActionState<bevy_new_2d::demo::PlayerAction>": {
+    "leafwing_input_manager::action_state::ActionState<eat_o_perish::demo::PlayerAction>": {
       "additionalProperties": false,
       "isComponent": true,
       "isResource": true,
-      "long_name": "leafwing_input_manager::action_state::ActionState<bevy_new_2d::demo::PlayerAction>",
+      "long_name": "leafwing_input_manager::action_state::ActionState<eat_o_perish::demo::PlayerAction>",
       "properties": {
         "action_data": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         },
         "disabled": {
@@ -21277,11 +21401,11 @@
       "type": "object",
       "typeInfo": "Struct"
     },
-    "leafwing_input_manager::input_map::InputMap<bevy_new_2d::demo::PlayerAction>": {
+    "leafwing_input_manager::input_map::InputMap<eat_o_perish::demo::PlayerAction>": {
       "additionalProperties": false,
       "isComponent": true,
       "isResource": true,
-      "long_name": "leafwing_input_manager::input_map::InputMap<bevy_new_2d::demo::PlayerAction>",
+      "long_name": "leafwing_input_manager::input_map::InputMap<eat_o_perish::demo::PlayerAction>",
       "properties": {
         "associated_gamepad": {
           "type": {
@@ -21290,22 +21414,22 @@
         },
         "axislike_map": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         },
         "buttonlike_map": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         },
         "dual_axislike_map": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         },
         "triple_axislike_map": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<bevy_new_2d::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         }
       },

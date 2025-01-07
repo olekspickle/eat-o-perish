@@ -6,7 +6,7 @@ You can [try this template in your web browser!](https://the-bevy-flock.itch.io/
 
 [@ChristopherBiscardi](https://github.com/ChristopherBiscardi) made a video on how to use this template from start to finish:
 
-[<img src="./docs/img/thumbnail.png" width=40% height=40% alt="A video tutorial for bevy_new_2d, formerly known as bevy_quickstart"/>](https://www.youtube.com/watch?v=ESBRyXClaYc)
+[<img src="./docs/img/thumbnail.png" width=40% height=40% alt="A video tutorial for eat_o_perish, formerly known as bevy_quickstart"/>](https://www.youtube.com/watch?v=ESBRyXClaYc)
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ See our [Design Document](./docs/design.md) for more information on how we struc
 Install [`cargo-generate`](https://github.com/cargo-generate/cargo-generate) and run the following command:
 
 ```sh
-cargo generate thebevyflock/bevy_new_2d
+cargo generate thebevyflock/eat_o_perish
 ```
 
 Then [create a GitHub repository](https://github.com/new) and push your local repository to it.
