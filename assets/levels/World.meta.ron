@@ -1,0 +1,13 @@
+(
+  assets:
+   [ 
+    ("Direct", File ( path: "blueprints/Direct.glb" )),
+    ("Material", File ( path: "materials/Material.glb" )),
+    ("Herbivore", File ( path: "blueprints/Herbivore.glb" )),
+    ("Material.001", File ( path: "materials/Material.001.glb" )),
+    ("FoodPellet", File ( path: "blueprints/FoodPellet.glb" )),
+    ("Material.002", File ( path: "materials/Material.002.glb" )),
+    ("Preditor", File ( path: "blueprints/Preditor.glb" )),
+    ("Material.003", File ( path: "materials/Material.003.glb" )),
+   ]
+)

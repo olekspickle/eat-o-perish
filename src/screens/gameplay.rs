@@ -3,7 +3,7 @@
 use bevy::{input::common_conditions::input_just_pressed, prelude::*};
 
 use crate::{
-    demo::level::spawn_level as spawn_level_command,
+    game::level::spawn_level as spawn_level_command,
     asset_tracking::LoadResource, audio::Music,
     screens::Screen,
 };

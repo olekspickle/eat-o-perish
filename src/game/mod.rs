@@ -8,12 +8,22 @@ use avian3d::prelude::*;
 use bevy_tnua::prelude::*;
 use bevy_tnua_avian3d::*;
 use leafwing_input_manager::prelude::*;
+use smooth_bevy_cameras::{LookTransform, LookTransformBundle, Smoother};
 
 pub mod level;
+pub mod critters;
 
 #[derive(Component, Reflect)]
 #[reflect(Component)]
 struct Player;
+
+#[derive(Component, Reflect)]
+#[reflect(Component)]
+struct PlayerCamera;
+
+#[derive(Component, Reflect)]
+#[reflect(Component)]
+struct NeedsTnua;
 
 #[derive(Actionlike, PartialEq, Eq, Clone, Copy, Hash, Debug, Reflect)]
 pub enum PlayerAction {
@@ -30,9 +40,16 @@ struct PlayerInputMap(InputMap<PlayerAction>);
 pub(super) fn plugin(app: &mut App) {
     app.add_plugins((
         level::plugin,
+        critters::plugin,
     ));
     app.register_type::<Player>();
-    app.add_systems(Update, setup_tnua);
+    app.register_type::<PlayerCamera>();
+    app.register_type::<NeedsTnua>();
+    app.add_systems(Update, (
+        setup_camera,
+        maintain_camera,
+        setup_tnua,
+    ));
     app.add_systems(
         FixedUpdate,
         apply_controls.in_set(TnuaUserControlsSystemSet),
@@ -47,9 +64,35 @@ pub(super) fn plugin(app: &mut App) {
     app.add_plugins(InputManagerPlugin::<PlayerAction>::default());
 }
 
+fn setup_camera(
+    mut commands: Commands,
+    camera: Query<(Entity, &GlobalTransform), (With<PlayerCamera>, Without<LookTransform>)>,
+) {
+    for (camera_entity, transform) in &camera {
+        commands.entity(camera_entity).insert(
+            LookTransformBundle {
+                transform: LookTransform::new(transform.translation(), Vec3::default(), Vec3::Y),
+                smoother: Smoother::new(0.9),
+            }
+        );
+    }
+}
+
+fn maintain_camera(
+    player: Query<&GlobalTransform, With<Player>>,
+    mut camera: Query<&mut LookTransform>,
+) {
+    if let Ok(player_transform) = player.get_single() {
+        for mut look_transform in &mut camera {
+            look_transform.target = player_transform.translation();
+            look_transform.eye = player_transform.translation() + Vec3::new(0.0, 14.0, 62.0);
+        }
+    }
+}
+
 fn setup_tnua(
     mut commands: Commands,
-    query: Query<Entity, (Added<Player>, Without<TnuaController>)>,
+    query: Query<Entity, (With<NeedsTnua>, Without<TnuaController>)>,
     input_map: Res<PlayerInputMap>,
 ) {
     for entity in &query {
@@ -58,14 +101,14 @@ fn setup_tnua(
             TnuaAvian3dSensorShape(Collider::cylinder(0.49, 0.0)),
             LockedAxes::ROTATION_LOCKED,
             InputManagerBundle::with_map(input_map.0.clone())
-        ));
+        )).remove::<NeedsTnua>();
     }
 }
 
 
 fn apply_controls(
     actions: Query<&ActionState<PlayerAction>>,
-    mut query: Query<&mut TnuaController>,
+    mut query: Query<&mut TnuaController, With<Player>>,
 ) {
     let Ok(mut controller) = query.get_single_mut() else {
         return;
@@ -100,7 +143,7 @@ fn apply_controls(
         desired_velocity: direction.normalize_or_zero() * 10.0,
         // The `float_height` must be greater (even if by little) from the distance between the
         // character's center and the lowest point of its collider.
-        float_height: 1.5,
+        float_height: 1.3,
         // `TnuaBuiltinWalk` has many other fields for customizing the movement - but they have
         // sensible defaults. Refer to the `TnuaBuiltinWalk`'s documentation to learn what they do.
         ..Default::default()

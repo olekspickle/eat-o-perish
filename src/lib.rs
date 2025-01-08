@@ -1,6 +1,6 @@
 mod asset_tracking;
 pub mod audio;
-mod demo;
+mod game;
 #[cfg(feature = "dev")]
 mod dev_tools;
 mod screens;
@@ -17,6 +17,7 @@ use avian3d::prelude::*;
 
 use bevy_tnua::prelude::*;
 use bevy_tnua_avian3d::*;
+use smooth_bevy_cameras::{LookTransform, LookTransformBundle, LookTransformPlugin, Smoother};
 
 pub struct AppPlugin;
 
@@ -62,6 +63,7 @@ impl Plugin for AppPlugin {
                 PhysicsPlugins::default(),
                 TnuaControllerPlugin::new(FixedUpdate),
                 TnuaAvian3dPlugin::new(FixedUpdate),
+                LookTransformPlugin,
         ));
 
         app.register_type::<bevy::text::TextEntity>();
@@ -69,7 +71,7 @@ impl Plugin for AppPlugin {
         // Add other plugins.
         app.add_plugins((
             asset_tracking::plugin,
-            demo::plugin,
+            game::plugin,
             screens::plugin,
             theme::plugin,
         ));
