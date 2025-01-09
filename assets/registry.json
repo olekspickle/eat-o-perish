@@ -4474,120 +4474,6 @@
       "type": "object",
       "typeInfo": "Enum"
     },
-    "bevy_asset::handle::Handle<eat_o_perish::screens::credits::CreditsMusic>": {
-      "isComponent": false,
-      "isResource": false,
-      "long_name": "bevy_asset::handle::Handle<eat_o_perish::screens::credits::CreditsMusic>",
-      "oneOf": [
-        {
-          "items": false,
-          "long_name": "Strong",
-          "prefixItems": [
-            {
-              "type": {
-                "$ref": "#/$defs/alloc::sync::Arc<bevy_asset::handle::StrongHandle>"
-              }
-            }
-          ],
-          "short_name": "Strong",
-          "type": "array",
-          "typeInfo": "Tuple"
-        },
-        {
-          "items": false,
-          "long_name": "Weak",
-          "prefixItems": [
-            {
-              "type": {
-                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>"
-              }
-            }
-          ],
-          "short_name": "Weak",
-          "type": "array",
-          "typeInfo": "Tuple"
-        }
-      ],
-      "short_name": "Handle<CreditsMusic>",
-      "type": "object",
-      "typeInfo": "Enum"
-    },
-    "bevy_asset::handle::Handle<eat_o_perish::screens::gameplay::GameplayMusic>": {
-      "isComponent": false,
-      "isResource": false,
-      "long_name": "bevy_asset::handle::Handle<eat_o_perish::screens::gameplay::GameplayMusic>",
-      "oneOf": [
-        {
-          "items": false,
-          "long_name": "Strong",
-          "prefixItems": [
-            {
-              "type": {
-                "$ref": "#/$defs/alloc::sync::Arc<bevy_asset::handle::StrongHandle>"
-              }
-            }
-          ],
-          "short_name": "Strong",
-          "type": "array",
-          "typeInfo": "Tuple"
-        },
-        {
-          "items": false,
-          "long_name": "Weak",
-          "prefixItems": [
-            {
-              "type": {
-                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>"
-              }
-            }
-          ],
-          "short_name": "Weak",
-          "type": "array",
-          "typeInfo": "Tuple"
-        }
-      ],
-      "short_name": "Handle<GameplayMusic>",
-      "type": "object",
-      "typeInfo": "Enum"
-    },
-    "bevy_asset::handle::Handle<eat_o_perish::theme::interaction::InteractionAssets>": {
-      "isComponent": false,
-      "isResource": false,
-      "long_name": "bevy_asset::handle::Handle<eat_o_perish::theme::interaction::InteractionAssets>",
-      "oneOf": [
-        {
-          "items": false,
-          "long_name": "Strong",
-          "prefixItems": [
-            {
-              "type": {
-                "$ref": "#/$defs/alloc::sync::Arc<bevy_asset::handle::StrongHandle>"
-              }
-            }
-          ],
-          "short_name": "Strong",
-          "type": "array",
-          "typeInfo": "Tuple"
-        },
-        {
-          "items": false,
-          "long_name": "Weak",
-          "prefixItems": [
-            {
-              "type": {
-                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>"
-              }
-            }
-          ],
-          "short_name": "Weak",
-          "type": "array",
-          "typeInfo": "Tuple"
-        }
-      ],
-      "short_name": "Handle<InteractionAssets>",
-      "type": "object",
-      "typeInfo": "Enum"
-    },
     "bevy_asset::handle::Handle<bevy_pbr::pbr_material::StandardMaterial>": {
       "isComponent": false,
       "isResource": false,
@@ -4927,6 +4813,120 @@
         }
       ],
       "short_name": "Handle<BlueprintPreloadAssets>",
+      "type": "object",
+      "typeInfo": "Enum"
+    },
+    "bevy_asset::handle::Handle<eat_o_perish::screens::credits::CreditsMusic>": {
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "bevy_asset::handle::Handle<eat_o_perish::screens::credits::CreditsMusic>",
+      "oneOf": [
+        {
+          "items": false,
+          "long_name": "Strong",
+          "prefixItems": [
+            {
+              "type": {
+                "$ref": "#/$defs/alloc::sync::Arc<bevy_asset::handle::StrongHandle>"
+              }
+            }
+          ],
+          "short_name": "Strong",
+          "type": "array",
+          "typeInfo": "Tuple"
+        },
+        {
+          "items": false,
+          "long_name": "Weak",
+          "prefixItems": [
+            {
+              "type": {
+                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>"
+              }
+            }
+          ],
+          "short_name": "Weak",
+          "type": "array",
+          "typeInfo": "Tuple"
+        }
+      ],
+      "short_name": "Handle<CreditsMusic>",
+      "type": "object",
+      "typeInfo": "Enum"
+    },
+    "bevy_asset::handle::Handle<eat_o_perish::screens::gameplay::GameplayMusic>": {
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "bevy_asset::handle::Handle<eat_o_perish::screens::gameplay::GameplayMusic>",
+      "oneOf": [
+        {
+          "items": false,
+          "long_name": "Strong",
+          "prefixItems": [
+            {
+              "type": {
+                "$ref": "#/$defs/alloc::sync::Arc<bevy_asset::handle::StrongHandle>"
+              }
+            }
+          ],
+          "short_name": "Strong",
+          "type": "array",
+          "typeInfo": "Tuple"
+        },
+        {
+          "items": false,
+          "long_name": "Weak",
+          "prefixItems": [
+            {
+              "type": {
+                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>"
+              }
+            }
+          ],
+          "short_name": "Weak",
+          "type": "array",
+          "typeInfo": "Tuple"
+        }
+      ],
+      "short_name": "Handle<GameplayMusic>",
+      "type": "object",
+      "typeInfo": "Enum"
+    },
+    "bevy_asset::handle::Handle<eat_o_perish::theme::interaction::InteractionAssets>": {
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "bevy_asset::handle::Handle<eat_o_perish::theme::interaction::InteractionAssets>",
+      "oneOf": [
+        {
+          "items": false,
+          "long_name": "Strong",
+          "prefixItems": [
+            {
+              "type": {
+                "$ref": "#/$defs/alloc::sync::Arc<bevy_asset::handle::StrongHandle>"
+              }
+            }
+          ],
+          "short_name": "Strong",
+          "type": "array",
+          "typeInfo": "Tuple"
+        },
+        {
+          "items": false,
+          "long_name": "Weak",
+          "prefixItems": [
+            {
+              "type": {
+                "$ref": "#/$defs/bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>"
+              }
+            }
+          ],
+          "short_name": "Weak",
+          "type": "array",
+          "typeInfo": "Tuple"
+        }
+      ],
+      "short_name": "Handle<InteractionAssets>",
       "type": "object",
       "typeInfo": "Enum"
     },
@@ -5666,144 +5666,6 @@
       "type": "object",
       "typeInfo": "Enum"
     },
-    "bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>": {
-      "isComponent": false,
-      "isResource": false,
-      "long_name": "bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>",
-      "oneOf": [
-        {
-          "additionalProperties": false,
-          "long_name": "Index",
-          "properties": {
-            "index": {
-              "long_name": "index",
-              "type": {
-                "$ref": "#/$defs/bevy_asset::assets::AssetIndex"
-              }
-            }
-          },
-          "required": [
-            "index"
-          ],
-          "short_name": "Index",
-          "type": "object",
-          "typeInfo": "Struct"
-        },
-        {
-          "additionalProperties": false,
-          "long_name": "Uuid",
-          "properties": {
-            "uuid": {
-              "long_name": "uuid",
-              "type": {
-                "$ref": "#/$defs/uuid::Uuid"
-              }
-            }
-          },
-          "required": [
-            "uuid"
-          ],
-          "short_name": "Uuid",
-          "type": "object",
-          "typeInfo": "Struct"
-        }
-      ],
-      "short_name": "AssetId<CreditsMusic>",
-      "type": "object",
-      "typeInfo": "Enum"
-    },
-    "bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>": {
-      "isComponent": false,
-      "isResource": false,
-      "long_name": "bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>",
-      "oneOf": [
-        {
-          "additionalProperties": false,
-          "long_name": "Index",
-          "properties": {
-            "index": {
-              "long_name": "index",
-              "type": {
-                "$ref": "#/$defs/bevy_asset::assets::AssetIndex"
-              }
-            }
-          },
-          "required": [
-            "index"
-          ],
-          "short_name": "Index",
-          "type": "object",
-          "typeInfo": "Struct"
-        },
-        {
-          "additionalProperties": false,
-          "long_name": "Uuid",
-          "properties": {
-            "uuid": {
-              "long_name": "uuid",
-              "type": {
-                "$ref": "#/$defs/uuid::Uuid"
-              }
-            }
-          },
-          "required": [
-            "uuid"
-          ],
-          "short_name": "Uuid",
-          "type": "object",
-          "typeInfo": "Struct"
-        }
-      ],
-      "short_name": "AssetId<GameplayMusic>",
-      "type": "object",
-      "typeInfo": "Enum"
-    },
-    "bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>": {
-      "isComponent": false,
-      "isResource": false,
-      "long_name": "bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>",
-      "oneOf": [
-        {
-          "additionalProperties": false,
-          "long_name": "Index",
-          "properties": {
-            "index": {
-              "long_name": "index",
-              "type": {
-                "$ref": "#/$defs/bevy_asset::assets::AssetIndex"
-              }
-            }
-          },
-          "required": [
-            "index"
-          ],
-          "short_name": "Index",
-          "type": "object",
-          "typeInfo": "Struct"
-        },
-        {
-          "additionalProperties": false,
-          "long_name": "Uuid",
-          "properties": {
-            "uuid": {
-              "long_name": "uuid",
-              "type": {
-                "$ref": "#/$defs/uuid::Uuid"
-              }
-            }
-          },
-          "required": [
-            "uuid"
-          ],
-          "short_name": "Uuid",
-          "type": "object",
-          "typeInfo": "Struct"
-        }
-      ],
-      "short_name": "AssetId<InteractionAssets>",
-      "type": "object",
-      "typeInfo": "Enum"
-    },
     "bevy_asset::id::AssetId<bevy_pbr::pbr_material::StandardMaterial>": {
       "isComponent": false,
       "isResource": false,
@@ -6215,6 +6077,144 @@
         }
       ],
       "short_name": "AssetId<BlueprintPreloadAssets>",
+      "type": "object",
+      "typeInfo": "Enum"
+    },
+    "bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>": {
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "bevy_asset::id::AssetId<eat_o_perish::screens::credits::CreditsMusic>",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "long_name": "Index",
+          "properties": {
+            "index": {
+              "long_name": "index",
+              "type": {
+                "$ref": "#/$defs/bevy_asset::assets::AssetIndex"
+              }
+            }
+          },
+          "required": [
+            "index"
+          ],
+          "short_name": "Index",
+          "type": "object",
+          "typeInfo": "Struct"
+        },
+        {
+          "additionalProperties": false,
+          "long_name": "Uuid",
+          "properties": {
+            "uuid": {
+              "long_name": "uuid",
+              "type": {
+                "$ref": "#/$defs/uuid::Uuid"
+              }
+            }
+          },
+          "required": [
+            "uuid"
+          ],
+          "short_name": "Uuid",
+          "type": "object",
+          "typeInfo": "Struct"
+        }
+      ],
+      "short_name": "AssetId<CreditsMusic>",
+      "type": "object",
+      "typeInfo": "Enum"
+    },
+    "bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>": {
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "bevy_asset::id::AssetId<eat_o_perish::screens::gameplay::GameplayMusic>",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "long_name": "Index",
+          "properties": {
+            "index": {
+              "long_name": "index",
+              "type": {
+                "$ref": "#/$defs/bevy_asset::assets::AssetIndex"
+              }
+            }
+          },
+          "required": [
+            "index"
+          ],
+          "short_name": "Index",
+          "type": "object",
+          "typeInfo": "Struct"
+        },
+        {
+          "additionalProperties": false,
+          "long_name": "Uuid",
+          "properties": {
+            "uuid": {
+              "long_name": "uuid",
+              "type": {
+                "$ref": "#/$defs/uuid::Uuid"
+              }
+            }
+          },
+          "required": [
+            "uuid"
+          ],
+          "short_name": "Uuid",
+          "type": "object",
+          "typeInfo": "Struct"
+        }
+      ],
+      "short_name": "AssetId<GameplayMusic>",
+      "type": "object",
+      "typeInfo": "Enum"
+    },
+    "bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>": {
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "bevy_asset::id::AssetId<eat_o_perish::theme::interaction::InteractionAssets>",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "long_name": "Index",
+          "properties": {
+            "index": {
+              "long_name": "index",
+              "type": {
+                "$ref": "#/$defs/bevy_asset::assets::AssetIndex"
+              }
+            }
+          },
+          "required": [
+            "index"
+          ],
+          "short_name": "Index",
+          "type": "object",
+          "typeInfo": "Struct"
+        },
+        {
+          "additionalProperties": false,
+          "long_name": "Uuid",
+          "properties": {
+            "uuid": {
+              "long_name": "uuid",
+              "type": {
+                "$ref": "#/$defs/uuid::Uuid"
+              }
+            }
+          },
+          "required": [
+            "uuid"
+          ],
+          "short_name": "Uuid",
+          "type": "object",
+          "typeInfo": "Struct"
+        }
+      ],
+      "short_name": "AssetId<InteractionAssets>",
       "type": "object",
       "typeInfo": "Enum"
     },
@@ -10867,79 +10867,6 @@
         "joints"
       ],
       "short_name": "SkinnedMesh",
-      "type": "object",
-      "typeInfo": "Struct"
-    },
-    "eat_o_perish::demo::Player": {
-      "additionalProperties": false,
-      "isComponent": true,
-      "isResource": false,
-      "long_name": "eat_o_perish::demo::Player",
-      "properties": {},
-      "required": [],
-      "short_name": "Player",
-      "type": "object",
-      "typeInfo": "Struct"
-    },
-    "eat_o_perish::demo::PlayerAction": {
-      "isComponent": false,
-      "isResource": false,
-      "long_name": "eat_o_perish::demo::PlayerAction",
-      "oneOf": [
-        "Up",
-        "Down",
-        "Left",
-        "Right",
-        "Jump"
-      ],
-      "short_name": "PlayerAction",
-      "type": "string",
-      "typeInfo": "Enum"
-    },
-    "eat_o_perish::screens::splash::SplashTimer": {
-      "isComponent": false,
-      "isResource": true,
-      "items": false,
-      "long_name": "eat_o_perish::screens::splash::SplashTimer",
-      "prefixItems": [
-        {
-          "type": {
-            "$ref": "#/$defs/bevy_time::timer::Timer"
-          }
-        }
-      ],
-      "short_name": "SplashTimer",
-      "type": "array",
-      "typeInfo": "TupleStruct"
-    },
-    "eat_o_perish::theme::interaction::InteractionPalette": {
-      "additionalProperties": false,
-      "isComponent": true,
-      "isResource": false,
-      "long_name": "eat_o_perish::theme::interaction::InteractionPalette",
-      "properties": {
-        "hovered": {
-          "type": {
-            "$ref": "#/$defs/bevy_color::color::Color"
-          }
-        },
-        "none": {
-          "type": {
-            "$ref": "#/$defs/bevy_color::color::Color"
-          }
-        },
-        "pressed": {
-          "type": {
-            "$ref": "#/$defs/bevy_color::color::Color"
-          }
-        }
-      },
-      "required": [
-        "none",
-        "hovered",
-        "pressed"
-      ],
-      "short_name": "InteractionPalette",
       "type": "object",
       "typeInfo": "Struct"
     },
@@ -16933,96 +16860,6 @@
         }
       }
     },
-    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
-      "isComponent": false,
-      "isResource": false,
-      "keyType": {
-        "type": {
-          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
-        }
-      },
-      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
-      "short_name": "HashMap<PlayerAction, Vec<Box<dyn Axislike>>, DefaultHashBuilder>",
-      "type": "object",
-      "typeInfo": "Map",
-      "valueType": {
-        "type": {
-          "$ref": "#/$defs/alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>"
-        }
-      }
-    },
-    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
-      "isComponent": false,
-      "isResource": false,
-      "keyType": {
-        "type": {
-          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
-        }
-      },
-      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
-      "short_name": "HashMap<PlayerAction, Vec<Box<dyn Buttonlike>>, DefaultHashBuilder>",
-      "type": "object",
-      "typeInfo": "Map",
-      "valueType": {
-        "type": {
-          "$ref": "#/$defs/alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>"
-        }
-      }
-    },
-    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
-      "isComponent": false,
-      "isResource": false,
-      "keyType": {
-        "type": {
-          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
-        }
-      },
-      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
-      "short_name": "HashMap<PlayerAction, Vec<Box<dyn DualAxislike>>, DefaultHashBuilder>",
-      "type": "object",
-      "typeInfo": "Map",
-      "valueType": {
-        "type": {
-          "$ref": "#/$defs/alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>"
-        }
-      }
-    },
-    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
-      "isComponent": false,
-      "isResource": false,
-      "keyType": {
-        "type": {
-          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
-        }
-      },
-      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
-      "short_name": "HashMap<PlayerAction, Vec<Box<dyn TripleAxislike>>, DefaultHashBuilder>",
-      "type": "object",
-      "typeInfo": "Map",
-      "valueType": {
-        "type": {
-          "$ref": "#/$defs/alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>"
-        }
-      }
-    },
-    "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
-      "isComponent": false,
-      "isResource": false,
-      "keyType": {
-        "type": {
-          "$ref": "#/$defs/eat_o_perish::demo::PlayerAction"
-        }
-      },
-      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
-      "short_name": "HashMap<PlayerAction, ActionData, DefaultHashBuilder>",
-      "type": "object",
-      "typeInfo": "Map",
-      "valueType": {
-        "type": {
-          "$ref": "#/$defs/leafwing_input_manager::action_state::action_data::ActionData"
-        }
-      }
-    },
     "bevy_utils::hashbrown::HashMap<core::any::TypeId, leafwing_input_manager::user_input::updating::UpdatedValues, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
       "isComponent": false,
       "isResource": false,
@@ -17038,6 +16875,96 @@
       "valueType": {
         "type": {
           "$ref": "#/$defs/leafwing_input_manager::user_input::updating::UpdatedValues"
+        }
+      }
+    },
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+      "isComponent": false,
+      "isResource": false,
+      "keyType": {
+        "type": {
+          "$ref": "#/$defs/eat_o_perish::game::PlayerAction"
+        }
+      },
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "short_name": "HashMap<PlayerAction, Vec<Box<dyn Axislike>>, DefaultHashBuilder>",
+      "type": "object",
+      "typeInfo": "Map",
+      "valueType": {
+        "type": {
+          "$ref": "#/$defs/alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>"
+        }
+      }
+    },
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+      "isComponent": false,
+      "isResource": false,
+      "keyType": {
+        "type": {
+          "$ref": "#/$defs/eat_o_perish::game::PlayerAction"
+        }
+      },
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "short_name": "HashMap<PlayerAction, Vec<Box<dyn Buttonlike>>, DefaultHashBuilder>",
+      "type": "object",
+      "typeInfo": "Map",
+      "valueType": {
+        "type": {
+          "$ref": "#/$defs/alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>"
+        }
+      }
+    },
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+      "isComponent": false,
+      "isResource": false,
+      "keyType": {
+        "type": {
+          "$ref": "#/$defs/eat_o_perish::game::PlayerAction"
+        }
+      },
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "short_name": "HashMap<PlayerAction, Vec<Box<dyn DualAxislike>>, DefaultHashBuilder>",
+      "type": "object",
+      "typeInfo": "Map",
+      "valueType": {
+        "type": {
+          "$ref": "#/$defs/alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>"
+        }
+      }
+    },
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+      "isComponent": false,
+      "isResource": false,
+      "keyType": {
+        "type": {
+          "$ref": "#/$defs/eat_o_perish::game::PlayerAction"
+        }
+      },
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "short_name": "HashMap<PlayerAction, Vec<Box<dyn TripleAxislike>>, DefaultHashBuilder>",
+      "type": "object",
+      "typeInfo": "Map",
+      "valueType": {
+        "type": {
+          "$ref": "#/$defs/alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>"
+        }
+      }
+    },
+    "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>": {
+      "isComponent": false,
+      "isResource": false,
+      "keyType": {
+        "type": {
+          "$ref": "#/$defs/eat_o_perish::game::PlayerAction"
+        }
+      },
+      "long_name": "bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>",
+      "short_name": "HashMap<PlayerAction, ActionData, DefaultHashBuilder>",
+      "type": "object",
+      "typeInfo": "Map",
+      "valueType": {
+        "type": {
+          "$ref": "#/$defs/leafwing_input_manager::action_state::action_data::ActionData"
         }
       }
     },
@@ -20561,6 +20488,145 @@
       "type": "object",
       "typeInfo": "Enum"
     },
+    "eat_o_perish::game::NeedsTnua": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::NeedsTnua",
+      "properties": {},
+      "required": [],
+      "short_name": "NeedsTnua",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "eat_o_perish::game::Player": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::Player",
+      "properties": {},
+      "required": [],
+      "short_name": "Player",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "eat_o_perish::game::PlayerAction": {
+      "isComponent": false,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::PlayerAction",
+      "oneOf": [
+        "Up",
+        "Down",
+        "Left",
+        "Right",
+        "Jump"
+      ],
+      "short_name": "PlayerAction",
+      "type": "string",
+      "typeInfo": "Enum"
+    },
+    "eat_o_perish::game::PlayerCamera": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::PlayerCamera",
+      "properties": {},
+      "required": [],
+      "short_name": "PlayerCamera",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "eat_o_perish::game::critters::Critter": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::critters::Critter",
+      "properties": {},
+      "required": [],
+      "short_name": "Critter",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "eat_o_perish::game::critters::FoodPellet": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::critters::FoodPellet",
+      "properties": {},
+      "required": [],
+      "short_name": "FoodPellet",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "eat_o_perish::game::critters::Herbivore": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::critters::Herbivore",
+      "properties": {},
+      "required": [],
+      "short_name": "Herbivore",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "eat_o_perish::game::critters::Preditor": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::critters::Preditor",
+      "properties": {},
+      "required": [],
+      "short_name": "Preditor",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
+    "eat_o_perish::screens::splash::SplashTimer": {
+      "isComponent": false,
+      "isResource": true,
+      "items": false,
+      "long_name": "eat_o_perish::screens::splash::SplashTimer",
+      "prefixItems": [
+        {
+          "type": {
+            "$ref": "#/$defs/bevy_time::timer::Timer"
+          }
+        }
+      ],
+      "short_name": "SplashTimer",
+      "type": "array",
+      "typeInfo": "TupleStruct"
+    },
+    "eat_o_perish::theme::interaction::InteractionPalette": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::theme::interaction::InteractionPalette",
+      "properties": {
+        "hovered": {
+          "type": {
+            "$ref": "#/$defs/bevy_color::color::Color"
+          }
+        },
+        "none": {
+          "type": {
+            "$ref": "#/$defs/bevy_color::color::Color"
+          }
+        },
+        "pressed": {
+          "type": {
+            "$ref": "#/$defs/bevy_color::color::Color"
+          }
+        }
+      },
+      "required": [
+        "none",
+        "hovered",
+        "pressed"
+      ],
+      "short_name": "InteractionPalette",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
     "f32": {
       "isComponent": false,
       "isResource": false,
@@ -21066,15 +21132,15 @@
       "type": "int",
       "typeInfo": "Value"
     },
-    "leafwing_input_manager::action_state::ActionState<eat_o_perish::demo::PlayerAction>": {
+    "leafwing_input_manager::action_state::ActionState<eat_o_perish::game::PlayerAction>": {
       "additionalProperties": false,
       "isComponent": true,
       "isResource": true,
-      "long_name": "leafwing_input_manager::action_state::ActionState<eat_o_perish::demo::PlayerAction>",
+      "long_name": "leafwing_input_manager::action_state::ActionState<eat_o_perish::game::PlayerAction>",
       "properties": {
         "action_data": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, leafwing_input_manager::action_state::action_data::ActionData, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         },
         "disabled": {
@@ -21401,11 +21467,11 @@
       "type": "object",
       "typeInfo": "Struct"
     },
-    "leafwing_input_manager::input_map::InputMap<eat_o_perish::demo::PlayerAction>": {
+    "leafwing_input_manager::input_map::InputMap<eat_o_perish::game::PlayerAction>": {
       "additionalProperties": false,
       "isComponent": true,
       "isResource": true,
-      "long_name": "leafwing_input_manager::input_map::InputMap<eat_o_perish::demo::PlayerAction>",
+      "long_name": "leafwing_input_manager::input_map::InputMap<eat_o_perish::game::PlayerAction>",
       "properties": {
         "associated_gamepad": {
           "type": {
@@ -21414,22 +21480,22 @@
         },
         "axislike_map": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::axislike::Axislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         },
         "buttonlike_map": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::buttonlike::Buttonlike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         },
         "dual_axislike_map": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::dualaxislike::DualAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         },
         "triple_axislike_map": {
           "type": {
-            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::demo::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
+            "$ref": "#/$defs/bevy_utils::hashbrown::HashMap<eat_o_perish::game::PlayerAction, alloc::vec::Vec<std::boxed::Box<dyn leafwing_input_manager::user_input::trait_reflection::tripleaxislike::TripleAxislike>>, bevy_utils::hashbrown::hash_map::DefaultHashBuilder>"
           }
         }
       },
