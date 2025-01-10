@@ -78,7 +78,7 @@ fn food_pellet_rain(
     children: Query<&Children>,
     aabs: Query<&bevy::render::primitives::Aabb>,
 ) {
-    if existing_pellets.iter().count() > 2000 {
+    if existing_pellets.iter().count() > 1000 {
         return
     }
     let mut rng = rand::thread_rng();

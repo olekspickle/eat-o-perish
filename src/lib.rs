@@ -6,6 +6,8 @@ mod dev_tools;
 mod screens;
 mod theme;
 
+use std::time::Duration;
+
 use bevy::{
     asset::AssetMetaCheck,
     audio::{AudioPlugin, Volume},
@@ -17,7 +19,8 @@ use avian3d::prelude::*;
 
 use bevy_tnua::prelude::*;
 use bevy_tnua_avian3d::*;
-use smooth_bevy_cameras::{LookTransform, LookTransformBundle, LookTransformPlugin, Smoother};
+use smooth_bevy_cameras::LookTransformPlugin;
+use bevy_spatial::{AutomaticUpdate, TransformMode, SpatialStructure};
 
 pub struct AppPlugin;
 
@@ -64,6 +67,14 @@ impl Plugin for AppPlugin {
                 TnuaControllerPlugin::new(FixedUpdate),
                 TnuaAvian3dPlugin::new(FixedUpdate),
                 LookTransformPlugin,
+                AutomaticUpdate::<crate::game::critters::FoodPellet>::new()
+                    .with_spatial_ds(SpatialStructure::KDTree3)
+                    .with_frequency(Duration::from_secs_f32(0.5))
+                    .with_transform(TransformMode::GlobalTransform),
+                AutomaticUpdate::<crate::game::critters::Herbivore>::new()
+                    .with_spatial_ds(SpatialStructure::KDTree3)
+                    .with_frequency(Duration::from_secs_f32(0.5))
+                    .with_transform(TransformMode::GlobalTransform),
         ));
 
         app.register_type::<bevy::text::TextEntity>();
