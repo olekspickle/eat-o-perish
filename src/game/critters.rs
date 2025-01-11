@@ -2,7 +2,7 @@ use std::{
     time::Duration,
 };
 
-use rand::Rng;
+use rand::prelude::*;
 
 
 use bevy::{
@@ -11,6 +11,7 @@ use bevy::{
 };
 use bevy_tnua::prelude::*;
 use avian3d::prelude::*;
+use bevy_spatial::{SpatialAccess, kdtree::KDTree3};
 use blenvy::{
     AddToGameWorld, BlueprintInfo,
     HideUntilReady, SpawnBlueprint,
@@ -35,16 +36,23 @@ pub struct CritterEater;
 #[reflect(Component)]
 pub struct FoodPellet;
 
+#[derive(Component, Reflect)]
+#[reflect(Component)]
+pub struct Speed(f32);
+
+#[derive(Component, Reflect)]
+#[reflect(Component)]
+pub struct ReproductionEnergy(f32);
 
 #[derive(Component, Reflect)]
 #[reflect(Component)]
 pub struct Critter;
 
-#[derive(Component, Reflect)]
+#[derive(Default, Component, Reflect)]
 #[reflect(Component)]
 pub struct Preditor;
 
-#[derive(Component, Reflect)]
+#[derive(Default, Component, Reflect)]
 #[reflect(Component)]
 pub struct Herbivore;
 
@@ -59,7 +67,9 @@ pub(super) fn plugin(app: &mut App) {
         spawn_preditors,
         herbivore_movement.run_if(on_timer(Duration::from_millis(500))),
         preditor_movement.run_if(on_timer(Duration::from_millis(500))),
-        consume_energy.run_if(on_timer(Duration::from_secs(1))),
+        consume_energy.run_if(on_timer(Duration::from_secs(2))),
+        reproduce::<Herbivore>.run_if(on_timer(Duration::from_secs(1))),
+        reproduce::<Preditor>.run_if(on_timer(Duration::from_secs(1))),
         eat_pellet,
         eat_critter,
     ));
@@ -67,51 +77,75 @@ pub(super) fn plugin(app: &mut App) {
 
 fn spawn_herbivores(
     mut commands: Commands,
-    query: Query<Entity, Added<Herbivore>>,
+    query: Query<(Entity, Option<&Speed>, Option<&ReproductionEnergy>, Option<&Energy>), Added<Herbivore>>,
 ) {
-    for entity in &query {
+    for (entity, maybe_speed, maybe_reproduction_energy, maybe_energy) in &query {
         commands.entity(entity).insert((
             BlueprintInfo::from_path("blueprints/Herbivore.glb"),
             SpawnBlueprint,
             HideUntilReady,
             AddToGameWorld,
             CollidingEntities::default(),
-            Energy(10),
             PelletEater,
         ));
+        if maybe_energy.is_none() {
+            commands.entity(entity).insert(Energy(10));
+        }
+        if maybe_speed.is_none() {
+            commands.entity(entity).insert(Speed(thread_rng().gen_range(0.5..2.0)));
+        }
+        if maybe_reproduction_energy.is_none() {
+            commands.entity(entity).insert(ReproductionEnergy(thread_rng().gen_range(1.0..20.0)));
+        }
     }
 }
 
 fn spawn_preditors(
     mut commands: Commands,
-    query: Query<Entity, Added<Preditor>>,
+    query: Query<(Entity, Option<&Speed>, Option<&ReproductionEnergy>, Option<&Energy>), Added<Preditor>>,
 ) {
-    for entity in &query {
+    for (entity, maybe_speed, maybe_reproduction_energy, maybe_energy) in &query {
         commands.entity(entity).insert((
             BlueprintInfo::from_path("blueprints/Preditor.glb"),
             SpawnBlueprint,
             HideUntilReady,
             AddToGameWorld,
             CollidingEntities::default(),
-            Energy(10),
             CritterEater,
         ));
+        if maybe_energy.is_none() {
+            commands.entity(entity).insert(Energy(10));
+        }
+        if maybe_speed.is_none() {
+            commands.entity(entity).insert(Speed(thread_rng().gen_range(0.5..2.0)));
+        }
+        if maybe_reproduction_energy.is_none() {
+            commands.entity(entity).insert(ReproductionEnergy(thread_rng().gen_range(1.0..20.0)));
+        }
     }
 }
 
 
 fn herbivore_movement(
-    mut query: Query<&mut TnuaController, With<Herbivore>>,
+    mut query: Query<(&mut TnuaController, &GlobalTransform, &Speed), With<Herbivore>>,
+    treeaccess: Res<KDTree3<FoodPellet>>,
 ) {
-    for mut controller in &mut query {
+    for (mut controller, transform, speed) in &mut query {
         let mut rng = rand::thread_rng();
-        let x: f32 = rng.gen_range(-1.0..1.0);
-        let z: f32 = rng.gen_range(-1.0..1.0);
+        let (x,z) = if let Some((pos, _entity)) = treeaccess.nearest_neighbour(transform.translation()) {
+            let x = pos.x - transform.translation().x;
+            let z = pos.z - transform.translation().z;
+            let a = z.atan2(x);
+            (a.cos(),a.sin())
+        } else {
+            (rng.gen_range(-1.0..1.0),
+             rng.gen_range(-1.0..1.0))
+        };
         let direction = Vec3::new(x, 0.0, z);
         let jumping = random::<f32>() > 0.9;
 
         controller.basis(TnuaBuiltinWalk {
-            desired_velocity: direction.normalize_or_zero() * 10.0,
+            desired_velocity: direction.normalize_or_zero() * 5.0 * speed.0,
             float_height: 1.5,
             ..Default::default()
         });
@@ -126,17 +160,25 @@ fn herbivore_movement(
 }
 
 fn preditor_movement(
-    mut query: Query<&mut TnuaController, With<Preditor>>,
+    mut query: Query<(&mut TnuaController, &GlobalTransform, &Speed), With<Preditor>>,
+    treeaccess: Res<KDTree3<Herbivore>>,
 ) {
-    for mut controller in &mut query {
+    for (mut controller, transform, speed) in &mut query {
         let mut rng = rand::thread_rng();
-        let x: f32 = rng.gen_range(-1.0..1.0);
-        let z: f32 = rng.gen_range(-1.0..1.0);
+        let (x,z) = if let Some((pos, _entity)) = treeaccess.nearest_neighbour(transform.translation()) {
+            let x = pos.x - transform.translation().x;
+            let z = pos.z - transform.translation().z;
+            let a = z.atan2(x);
+            (a.cos(),a.sin())
+        } else {
+            (rng.gen_range(-1.0..1.0),
+             rng.gen_range(-1.0..1.0))
+        };
         let direction = Vec3::new(x, 0.0, z);
         let jumping = random::<f32>() > 0.9;
 
         controller.basis(TnuaBuiltinWalk {
-            desired_velocity: direction.normalize_or_zero() * 10.0,
+            desired_velocity: direction.normalize_or_zero() * 5.0 * speed.0,
             float_height: 1.5,
             ..Default::default()
         });
@@ -193,6 +235,27 @@ fn consume_energy(
             commands.entity(entity).despawn_recursive();
         } else {
             energy.0 -= 1;
+        }
+    }
+}
+
+fn reproduce<T: Default + Component>(
+    mut commands: Commands,
+    mut query: Query<(&mut Energy, &ReproductionEnergy, &Speed, &GlobalTransform), With<T>>,
+) {
+    let mut rng = thread_rng();
+    for (mut energy, reproduction_energy, speed, transform) in &mut query {
+        if energy.0 as f32 > reproduction_energy.0*1.5 {
+            energy.0 -= reproduction_energy.0 as u32;
+            let new_speed = (speed.0 + rng.gen_range(-1.0..1.0)).max(0.0);
+            let new_reproduction_energy = (reproduction_energy.0 + rng.gen_range(-1.0..1.0)).max(0.0);
+            commands.spawn((
+                T::default(),
+                Energy(reproduction_energy.0 as u32),
+                Speed(new_speed),
+                ReproductionEnergy(new_reproduction_energy),
+                Transform::from(*transform),
+            ));
         }
     }
 }

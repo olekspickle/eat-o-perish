@@ -23,6 +23,7 @@ bevy-tnua-avian3d = "0.2"
 bevy-tnua = "0.21"
 leafwing-input-manager = "0.16"
 smooth-bevy-cameras = "0.13.0"
+bevy_spatial = "0.10.0"
 
 [features]
 default = [

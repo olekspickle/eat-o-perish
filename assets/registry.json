@@ -20580,6 +20580,17 @@
       "type": "object",
       "typeInfo": "Struct"
     },
+    "eat_o_perish::game::level::FloorPlate": {
+      "additionalProperties": false,
+      "isComponent": true,
+      "isResource": false,
+      "long_name": "eat_o_perish::game::level::FloorPlate",
+      "properties": {},
+      "required": [],
+      "short_name": "FloorPlate",
+      "type": "object",
+      "typeInfo": "Struct"
+    },
     "eat_o_perish::screens::splash::SplashTimer": {
       "isComponent": false,
       "isResource": true,
