@@ -3,15 +3,15 @@
 //! Feel free to change the logic found here if you feel like tinkering around
 //! to get a feeling for the template.
 
-use bevy::prelude::*;
 use avian3d::prelude::*;
+use bevy::prelude::*;
 use bevy_tnua::prelude::*;
 use bevy_tnua_avian3d::*;
 use leafwing_input_manager::prelude::*;
-use smooth_bevy_cameras::{LookTransform, LookTransformBundle, Smoother};
+use smooth_bevy_cameras::controllers::orbit::{OrbitCameraBundle, OrbitCameraController};
 
-pub mod level;
 pub mod critters;
+pub mod level;
 
 #[derive(Component, Reflect)]
 #[reflect(Component)]
@@ -38,18 +38,12 @@ pub enum PlayerAction {
 struct PlayerInputMap(InputMap<PlayerAction>);
 
 pub(super) fn plugin(app: &mut App) {
-    app.add_plugins((
-        level::plugin,
-        critters::plugin,
-    ));
+    app.add_plugins((level::plugin, critters::plugin));
     app.register_type::<Player>();
-    app.register_type::<PlayerCamera>();
+    //app.register_type::<PlayerCamera>();
     app.register_type::<NeedsTnua>();
-    app.add_systems(Update, (
-        setup_camera,
-        maintain_camera,
-        setup_tnua,
-    ));
+    app.add_systems(Startup, setup_camera);
+    app.add_systems(Update, setup_tnua);
     app.add_systems(
         FixedUpdate,
         apply_controls.in_set(TnuaUserControlsSystemSet),
@@ -64,30 +58,22 @@ pub(super) fn plugin(app: &mut App) {
     app.add_plugins(InputManagerPlugin::<PlayerAction>::default());
 }
 
-fn setup_camera(
-    mut commands: Commands,
-    camera: Query<(Entity, &GlobalTransform), (With<PlayerCamera>, Without<LookTransform>)>,
-) {
-    for (camera_entity, transform) in &camera {
-        commands.entity(camera_entity).insert(
-            LookTransformBundle {
-                transform: LookTransform::new(transform.translation(), Vec3::default(), Vec3::Y),
-                smoother: Smoother::new(0.9),
-            }
-        );
-    }
-}
+/// Sets up orbital view which can be used like this:
+///
+/// CTRL + mouse drag: Rotate camera
+/// Right mouse drag: Pan camera
+/// Mouse wheel: Zoom
+fn setup_camera(mut commands: Commands) {
+    let eye = Vec3::new(-2.0, 300.0, 200.0);
+    let target = Vec3::default();
 
-fn maintain_camera(
-    player: Query<&GlobalTransform, With<Player>>,
-    mut camera: Query<&mut LookTransform>,
-) {
-    if let Ok(player_transform) = player.get_single() {
-        for mut look_transform in &mut camera {
-            look_transform.target = player_transform.translation();
-            look_transform.eye = player_transform.translation() + Vec3::new(0.0, 14.0, 62.0);
-        }
-    }
+    let controller = OrbitCameraController {
+        mouse_translate_sensitivity: Vec2::splat(7.0),
+        ..Default::default()
+    };
+    commands
+        .spawn(Camera3d::default())
+        .insert(OrbitCameraBundle::new(controller, eye, target, Vec3::Y));
 }
 
 fn setup_tnua(
@@ -96,15 +82,17 @@ fn setup_tnua(
     input_map: Res<PlayerInputMap>,
 ) {
     for entity in &query {
-        commands.entity(entity).insert((
-            TnuaController::default(),
-            TnuaAvian3dSensorShape(Collider::cylinder(0.49, 0.0)),
-            LockedAxes::ROTATION_LOCKED,
-            InputManagerBundle::with_map(input_map.0.clone())
-        )).remove::<NeedsTnua>();
+        commands
+            .entity(entity)
+            .insert((
+                TnuaController::default(),
+                TnuaAvian3dSensorShape(Collider::cylinder(0.49, 0.0)),
+                LockedAxes::ROTATION_LOCKED,
+                InputManagerBundle::with_map(input_map.0.clone()),
+            ))
+            .remove::<NeedsTnua>();
     }
 }
-
 
 fn apply_controls(
     actions: Query<&ActionState<PlayerAction>>,

@@ -1,8 +1,8 @@
 mod asset_tracking;
 pub mod audio;
-mod game;
 #[cfg(feature = "dev")]
 mod dev_tools;
+mod game;
 mod screens;
 mod theme;
 
@@ -14,13 +14,12 @@ use bevy::{
     prelude::*,
 };
 
-use blenvy::BlenvyPlugin;
 use avian3d::prelude::*;
-
+use bevy_spatial::{AutomaticUpdate, SpatialStructure, TransformMode};
 use bevy_tnua::prelude::*;
 use bevy_tnua_avian3d::*;
-use smooth_bevy_cameras::LookTransformPlugin;
-use bevy_spatial::{AutomaticUpdate, TransformMode, SpatialStructure};
+use blenvy::BlenvyPlugin;
+use smooth_bevy_cameras::{controllers::orbit::OrbitCameraPlugin, LookTransformPlugin};
 
 pub struct AppPlugin;
 
@@ -33,6 +32,7 @@ impl Plugin for AppPlugin {
         );
 
         // Spawn the main camera.
+        // TODO: Not sure what this does?..
         app.add_systems(Startup, spawn_ui_camera);
 
         // Add Bevy plugins.
@@ -62,19 +62,22 @@ impl Plugin for AppPlugin {
                     },
                     ..default()
                 }),
-                BlenvyPlugin::default(),
-                PhysicsPlugins::default(),
-                TnuaControllerPlugin::new(FixedUpdate),
-                TnuaAvian3dPlugin::new(FixedUpdate),
-                LookTransformPlugin,
-                AutomaticUpdate::<crate::game::critters::FoodPellet>::new()
-                    .with_spatial_ds(SpatialStructure::KDTree3)
-                    .with_frequency(Duration::from_secs_f32(0.5))
-                    .with_transform(TransformMode::GlobalTransform),
-                AutomaticUpdate::<crate::game::critters::Herbivore>::new()
-                    .with_spatial_ds(SpatialStructure::KDTree3)
-                    .with_frequency(Duration::from_secs_f32(0.5))
-                    .with_transform(TransformMode::GlobalTransform),
+            BlenvyPlugin::default(),
+            PhysicsPlugins::default(),
+            TnuaControllerPlugin::new(FixedUpdate),
+            TnuaAvian3dPlugin::new(FixedUpdate),
+            // Camera
+            LookTransformPlugin,
+            OrbitCameraPlugin::default(),
+            // Herbivores
+            AutomaticUpdate::<crate::game::critters::FoodPellet>::new()
+                .with_spatial_ds(SpatialStructure::KDTree3)
+                .with_frequency(Duration::from_secs_f32(0.5))
+                .with_transform(TransformMode::GlobalTransform),
+            AutomaticUpdate::<crate::game::critters::Herbivore>::new()
+                .with_spatial_ds(SpatialStructure::KDTree3)
+                .with_frequency(Duration::from_secs_f32(0.5))
+                .with_transform(TransformMode::GlobalTransform),
         ));
 
         app.register_type::<bevy::text::TextEntity>();
