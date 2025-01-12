@@ -20525,17 +20525,6 @@
       "type": "string",
       "typeInfo": "Enum"
     },
-    "eat_o_perish::game::PlayerCamera": {
-      "additionalProperties": false,
-      "isComponent": true,
-      "isResource": false,
-      "long_name": "eat_o_perish::game::PlayerCamera",
-      "properties": {},
-      "required": [],
-      "short_name": "PlayerCamera",
-      "type": "object",
-      "typeInfo": "Struct"
-    },
     "eat_o_perish::game::critters::Critter": {
       "additionalProperties": false,
       "isComponent": true,
